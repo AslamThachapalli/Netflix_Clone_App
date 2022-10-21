@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix_clone/features/download/presentation/widgets/failure_display_widget.dart';
 
 import '../../../../core/constants/dimensions.dart';
-import 'download_screen_image_widget.dart';
+import '../bloc/download_bloc.dart';
+import 'download_page_image_url_widget.dart';
 
 class Section2 extends StatelessWidget {
   Section2({Key? key}) : super(key: key);
 
-  final List<String> imageList = [
-    'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg',
-    'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/nQKW2sabIClUsrQl3Y3i5LQgf5l.jpg',
-    'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg'
-  ];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,51 +32,25 @@ class Section2 extends StatelessWidget {
             height: 1.3,
           ),
         ),
-        SizedBox(
-          height: Dimensions.screenWidth * 0.83,
-          width: Dimensions.screenWidth,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                radius: Dimensions.screenWidth * 0.36,
-                backgroundColor: Colors.grey.withOpacity(0.5),
-              ),
-              DownloadScreenImageWidget(
-                margin: EdgeInsets.only(
-                  right: Dimensions.width50 * 2.5 + Dimensions.width10 * 3,
-                  bottom: Dimensions.height20,
+        BlocBuilder<DownloadBloc, DownloadState>(
+          builder: (context, state) {
+            return SizedBox(
+              height: Dimensions.screenWidth * 0.83,
+              width: Dimensions.screenWidth,
+              child: state.map(
+                initial: (_) => const SizedBox.shrink(),
+                loadInProgress: (_) => const Center(
+                  child: CircularProgressIndicator(),
                 ),
-                angle: -20,
-                image: imageList[0],
-                size: Size(
-                  Dimensions.screenWidth * 0.38,
-                  Dimensions.screenHeight * 0.234,
+                loadSuccess: (state) => DownloadsPageImageWidget(
+                  imageUrlList: state.imageUrlList,
+                ),
+                loadFailure: (state) => FailureDisplayWidget(
+                  failureMessage: state.message,
                 ),
               ),
-              DownloadScreenImageWidget(
-                margin: EdgeInsets.only(
-                  left: Dimensions.width50 * 2.5 + Dimensions.width10 * 3,
-                  bottom: Dimensions.height20,
-                ),
-                angle: 20,
-                image: imageList[2],
-                size: Size(
-                  Dimensions.screenWidth * 0.38,
-                  Dimensions.screenHeight * 0.234,
-                ),
-              ),
-              DownloadScreenImageWidget(
-                margin: EdgeInsets.only(top: Dimensions.height20),
-                angle: 0,
-                image: imageList[1],
-                size: Size(
-                  Dimensions.screenWidth * 0.39,
-                  Dimensions.screenHeight * 0.265,
-                ),
-              ),
-            ],
-          ),
+            );
+          },
         ),
         SizedBox(height: Dimensions.height20),
       ],

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_clone/injection.dart';
 
 import 'core/constants/colors.dart';
 import 'main_page/main_page.dart';
 
-// 499baff7b073e3b13525adef23c90afe
-
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
           backgroundColor: Colors.black,
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
           scaffoldBackgroundColor: backgroundColor,
           fontFamily: GoogleFonts.montserrat().fontFamily,
           textTheme: const TextTheme(

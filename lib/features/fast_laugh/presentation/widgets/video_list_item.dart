@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/constants/dimensions.dart';
 
+import '../../../../core/constants/colors.dart';
 import 'video_actions_widget.dart';
 
 class VideoListItem extends StatelessWidget {
@@ -34,6 +35,7 @@ class VideoListItem extends StatelessWidget {
                   child: Icon(
                     Icons.volume_off_sharp,
                     size: Dimensions.iconSize10 * 3,
+                    color: kWhiteColor,
                   ),
                 ),
                 Padding(

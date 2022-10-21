@@ -1,0 +1,21 @@
+{
+  "adult": false,
+  "backdrop_path": "/backdrop path",
+  "id": 779782,
+  "title": "title",
+  "original_language": "en",
+  "original_title": "original title",
+  "overview": "overview",
+  "poster_path": "imageUrl",
+  "media_type": "type",
+  "genre_ids": [
+    14,
+    28,
+    18
+  ],
+  "popularity": 92.39,
+  "release_date": "date",
+  "video": false,
+  "vote_average": 7.3,
+  "vote_count": 42
+}
