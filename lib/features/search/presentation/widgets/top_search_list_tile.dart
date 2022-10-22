@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/dimensions.dart';
-
-const imageUrl =
-    'https://www.themoviedb.org/t/p/w250_and_h141_face/wp3vpSWAIjKSEeYb8F5NSZfONqw.jpg';
+import '../../../../core/urls/apis.dart';
 
 class TopSearchListTile extends StatelessWidget {
   const TopSearchListTile({
     Key? key,
-    required this.index,
+    required this.imageUrl,
+    required this.title,
   }) : super(key: key);
 
-  final int index;
+  final String imageUrl;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +22,15 @@ class TopSearchListTile extends StatelessWidget {
           width: Dimensions.screenWidth * 0.35,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius5),
-              image: const DecorationImage(
-                image: NetworkImage(imageUrl),
+              image: DecorationImage(
+                image: NetworkImage('$kTopSearchImageBaseUrl$imageUrl'),
                 fit: BoxFit.cover,
               )),
         ),
         SizedBox(width: Dimensions.width10),
         Expanded(
           child: Text(
-            'Watch Movie',
+            title,
             style: TextStyle(
               fontSize: Dimensions.fontSize10 * 1.6,
               fontWeight: FontWeight.bold,

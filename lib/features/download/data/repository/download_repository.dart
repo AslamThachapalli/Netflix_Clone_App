@@ -17,7 +17,7 @@ class DownloadRepository implements IDownloadRepo {
   Future<Either<Failure, Download>> getDownloadLink() async {
     try {
       final response = await _getDownloadPageImageUrl.getImageUrl();
-      return right(response!.toDomain());
+      return right(response.toDomain());
     } on ServerException catch (_) {
       return left(const ServerFailure());
     }

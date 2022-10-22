@@ -12,7 +12,7 @@ class GetDownloadPageImageUrl {
   final http.Client _client;
   GetDownloadPageImageUrl(this._client);
 
-  Future<DownloadDto?>? getImageUrl() async {
+  Future<DownloadDto> getImageUrl() async {
     final response = await _client.get(Uri.parse(Apis.getDownloadImageApi));
     if (response.statusCode == 200) {
       return DownloadDto.fromJson(json.decode(response.body));

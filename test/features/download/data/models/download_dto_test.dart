@@ -10,24 +10,28 @@ void main() {
     json.decode(fixture('trending_url_response_filtered.json')),
   ]);
 
-  test('from Json', () {
-    //arrange
-    Map<String, dynamic> jsonMap = json.decode(fixture('trending_url_response.json'));
-    //act
-    final result = DownloadDto.fromJson(jsonMap);
-    //assert
-    expect(result, tDownloadDto);
+  group('from Json', () {
+    test('should return a valid model when json data is passed', () {
+      //arrange
+      Map<String, dynamic> jsonMap = json.decode(fixture('trending_url_response.json'));
+      //act
+      final result = DownloadDto.fromJson(jsonMap);
+      //assert
+      expect(result, tDownloadDto);
+    });
   });
 
-  test('to Json', () {
-    //act
-    final result = tDownloadDto.toJson();
-    //assert
-    final expectedMap = {
-      'results': [
-        json.decode(fixture('trending_url_response_filtered.json')),
-      ]
-    };
-    expect(result, expectedMap);
+  group('to Json', () {
+    test('should return a json map containing proper data', () {
+      //act
+      final result = tDownloadDto.toJson();
+      //assert
+      final expectedMap = {
+        'results': [
+          json.decode(fixture('trending_url_response_filtered.json')),
+        ]
+      };
+      expect(result, expectedMap);
+    });
   });
 }

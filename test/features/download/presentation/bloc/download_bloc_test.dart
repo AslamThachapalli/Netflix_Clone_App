@@ -58,19 +58,22 @@ void main() {
       },
     );
 
-    test('should emit [LoadInProgress, LoadFailure] when imageUrlList has failed', () {
-      //arrange
-      when(mockGetDownloadLink(mockParams)).thenAnswer(
-        (_) async => left(const ServerFailure()),
-      );
-      //assert later
-      const expected = [
-        LoadInProgress(),
-        LoadFailure(message: serverFailureMessage),
-      ];
-      expectLater(bloc.stream.asBroadcastStream(), emitsInOrder(expected));
-      //act
-      bloc.add(const LoadDownloadPageImage());
-    });
+    test(
+      'should emit [LoadInProgress, LoadFailure] when imageUrlList has failed',
+      () {
+        //arrange
+        when(mockGetDownloadLink(mockParams)).thenAnswer(
+          (_) async => left(const ServerFailure()),
+        );
+        //assert later
+        const expected = [
+          LoadInProgress(),
+          LoadFailure(message: serverFailureMessage),
+        ];
+        expectLater(bloc.stream.asBroadcastStream(), emitsInOrder(expected));
+        //act
+        bloc.add(const LoadDownloadPageImage());
+      },
+    );
   });
 }

@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:http/http.dart' as http;
+
 import 'package:netflix_clone/core/errors/exceptions.dart';
 import 'package:netflix_clone/core/urls/apis.dart';
 import 'package:netflix_clone/core/urls/api_key.dart';
@@ -33,7 +34,7 @@ void main() {
 
   group('getImageUrl', () {
     test(
-      'should perform a get request on a url',
+      'should perform a get request on the url',
       () {
         //arrange
         when(mockClient.get(mockUri)).thenAnswer(
