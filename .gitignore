@@ -45,3 +45,6 @@ app.*.map.json
 
 # Files to ignore
 lib/core/urls/api_key.dart
+*.g.dart
+*.freezed.dart
+*.mocks.dart
