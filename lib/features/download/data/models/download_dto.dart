@@ -16,7 +16,14 @@ class DownloadDto with _$DownloadDto {
   Download toDomain() {
     return Download(
         imageUrlList: resultsList.map((map) {
-      String imageUrl = map['poster_path'];
+      String imageUrl;
+      if (map['poster_path'] != null) {
+        imageUrl = map['poster_path'];
+      } else if (map['backdrop_path'] != null) {
+        imageUrl = map['backdrop_path'];
+      } else {
+        imageUrl = '';
+      }
       return imageUrl;
     }).toList());
   }

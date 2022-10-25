@@ -11,6 +11,7 @@ import 'package:netflix_clone/features/search/data/datasources/search_the_query.
 import 'package:netflix_clone/features/search/data/models/search_active_model_dto.dart';
 
 import '../../../../fixtures/fixture_reader.dart';
+
 @GenerateMocks([http.Client])
 import 'search_the_query_test.mocks.dart';
 

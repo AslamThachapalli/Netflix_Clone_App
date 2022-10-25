@@ -2,8 +2,10 @@ import 'package:netflix_clone/core/urls/api_key.dart';
 
 const kBaseUrl = 'https://api.themoviedb.org/3';
 const kImageBaseUrl = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2';
+const kHotAndNewImageBaseUrl = 'https://www.themoviedb.org/t/p/w533_and_h300_bestv2';
 const kTopSearchImageBaseUrl = 'https://www.themoviedb.org/t/p/w250_and_h141_face';
 const kFastLaughBaseUrl = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/';
+
 const List<Map<String, String>> kFastLaughUrls = [
   {'videoUrl': "BigBuckBunny.mp4", 'imageUrl': "images/BigBuckBunny.jpg"},
   {'videoUrl': "ForBiggerEscapes.mp4", 'imageUrl': "images/ForBiggerEscapes.jpg"},
@@ -21,4 +23,19 @@ class Apis {
   static const searchActiveApiPart1 =
       '$kBaseUrl/search/movie?api_key=$apiKey&language=en-US&query=';
   static const searchActiveApiPart2 = '&page=1&include_adult=false';
+  static const everyOnesWatchingApiPart1 =
+      '$kBaseUrl/discover/movie?api_key=$apiKey&language=en-US&sort_by=popularity.desc&include_adult=false&';
+  //include 'page = int' between 2 parts so to implement refresh functionality.
+  static const everyOnesWatchingApiPart2 = '&primary_release_year=2022';
+  static const comingSoonApiPart1 =
+      '$kBaseUrl/discover/tv?api_key=$apiKey&language=en-US&sort_by=popularity.desc&first_air_date_year=2022&';
+  //include 'page = int' between 2 parts so to implement refresh functionality.
+  static const comingSoonApiPart2 =
+      '&timezone=America%2FNew_York&include_null_first_air_dates=false';
 }
+
+//release last year
+//https://api.themoviedb.org/3/discover/movie?api_key=499baff7b073e3b13525adef23c90afe&language=en-US&sort_by=popularity.desc&include_adult=false&page=2&primary_release_year=2021
+
+//top 10 tv shows in India today
+//https://api.themoviedb.org/3/discover/tv?api_key=499baff7b073e3b13525adef23c90afe&language=en-US&sort_by=popularity.desc&page=2&timezone=America%2FNew_York&include_null_first_air_dates=false&screened_theatrically=true
