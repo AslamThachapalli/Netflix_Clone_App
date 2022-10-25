@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/dimensions.dart';
+import '../../../../core/urls/apis.dart';
 
 class HomeScreenImageWithGradient extends StatelessWidget {
-  const HomeScreenImageWithGradient({Key? key}) : super(key: key);
+  const HomeScreenImageWithGradient({Key? key, required this.imageUrl}) : super(key: key);
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,7 @@ class HomeScreenImageWithGradient extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: NetworkImage(
-                'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg'),
+            image: NetworkImage('$kHomePageImageBaseUrl$imageUrl'),
             fit: BoxFit.cover,
           )),
         ),

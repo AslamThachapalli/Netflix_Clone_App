@@ -5,7 +5,12 @@ import 'home_screen_list_title.dart';
 import 'number_card.dart';
 
 class Top10Widget extends StatelessWidget {
-  const Top10Widget({Key? key}) : super(key: key);
+  const Top10Widget({
+    Key? key,
+    required this.imageUrls,
+  }) : super(key: key);
+
+  final List<String> imageUrls;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +34,7 @@ class Top10Widget extends StatelessWidget {
               itemBuilder: (context, index) {
                 return NumberCard(
                   index: index,
+                  imageUrls: imageUrls.sublist(0, 10),
                 );
               },
               itemCount: 10,

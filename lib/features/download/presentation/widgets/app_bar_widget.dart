@@ -28,7 +28,12 @@ class AppBarWidget extends StatelessWidget {
         Container(
           height: Dimensions.height15 * 2,
           width: Dimensions.width15 * 2,
-          color: Colors.white,
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              image: DecorationImage(
+                image: AssetImage('assets/images/Netflix-avatar.png'),
+                fit: BoxFit.cover,
+              )),
         ),
         SizedBox(width: Dimensions.width10),
       ],

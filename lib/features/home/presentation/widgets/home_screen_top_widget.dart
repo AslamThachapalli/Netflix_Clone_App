@@ -7,13 +7,18 @@ import 'play-button_widget.dart';
 class HomeScreenTopWidget extends StatelessWidget {
   const HomeScreenTopWidget({
     Key? key,
+    required this.imageUrl,
   }) : super(key: key);
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const HomeScreenImageWithGradient(),
+        HomeScreenImageWithGradient(
+          imageUrl: imageUrl,
+        ),
         Positioned(
           bottom: 0,
           left: 0,
