@@ -20,6 +20,12 @@ Home Page                                                                       
 :------------------------------------------------------------------------------------------------------------:|:---------------------------------:
 ![](https://user-images.githubusercontent.com/113328135/199413451-cd8c9906-e8e9-4846-bece-03701c3b7dab.jpeg)  |  ![](https://user-images.githubusercontent.com/113328135/199413492-e936b7e0-e3c1-4ac4-ad70-2899e95592e0.jpeg)
 
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/113328135/199413451-cd8c9906-e8e9-4846-bece-03701c3b7dab.jpeg" width="100" />
+  <img src="https://user-images.githubusercontent.com/113328135/199413492-e936b7e0-e3c1-4ac4-ad70-2899e95592e0.jpeg" width="100" /> 
+  <img src="https://user-images.githubusercontent.com/113328135/199413603-1971b5c6-4b11-4def-9283-85cce39243e4.jpeg" width="100" />
+</p>
+
 ![](https://user-images.githubusercontent.com/113328135/199413451-cd8c9906-e8e9-4846-bece-03701c3b7dab.jpeg)
 ![WhatsApp Image 2022-11-02 at 11 50 49 AM (1)](https://user-images.githubusercontent.com/113328135/199413492-e936b7e0-e3c1-4ac4-ad70-2899e95592e0.jpeg)
 ![WhatsApp Image 2022-11-02 at 11 50 50 AM](https://user-images.githubusercontent.com/113328135/199413603-1971b5c6-4b11-4def-9283-85cce39243e4.jpeg)
